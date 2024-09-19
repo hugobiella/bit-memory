@@ -5,10 +5,9 @@
 
 [node name="game" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.75, 0.75)
-
 [node name="player" parent="." instance=ExtResource("1_1hgf2")]
 
 [node name="package" parent="." instance=ExtResource("3_k0bhb")]
 position = Vector2(-384, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
