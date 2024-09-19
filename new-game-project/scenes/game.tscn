@@ -1,33 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2s5725v4o3c8"]
+[gd_scene load_steps=3 format=3 uid="uid://c2s5725v4o3c8"]
 
 [ext_resource type="PackedScene" uid="uid://dpf6de5imqxlt" path="res://scenes/player.tscn" id="1_1hgf2"]
-[ext_resource type="PackedScene" uid="uid://cs167vr6phevm" path="res://scenes/wall.tscn" id="2_v4aha"]
 [ext_resource type="PackedScene" uid="uid://bklt6cfemsgv6" path="res://scenes/package.tscn" id="3_k0bhb"]
 
 [node name="game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.9, 0.9)
+zoom = Vector2(0.75, 0.75)
 
 [node name="player" parent="." instance=ExtResource("1_1hgf2")]
 
-[node name="walls" type="Node" parent="."]
-
-[node name="Wall" parent="walls" instance=ExtResource("2_v4aha")]
-position = Vector2(-640, 0)
-
-[node name="Wall2" parent="walls" instance=ExtResource("2_v4aha")]
-position = Vector2(640, 0)
-
-[node name="Wall3" parent="walls" instance=ExtResource("2_v4aha")]
-position = Vector2(0, -368)
-rotation = 1.5708
-scale = Vector2(1, 2.2)
-
-[node name="Wall4" parent="walls" instance=ExtResource("2_v4aha")]
-position = Vector2(0, 368)
-rotation = 1.5708
-scale = Vector2(1, 2.2)
-
 [node name="package" parent="." instance=ExtResource("3_k0bhb")]
-position = Vector2(-448, 0)
+position = Vector2(-384, 0)

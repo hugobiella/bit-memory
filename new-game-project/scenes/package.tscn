@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bklt6cfemsgv6"]
 
 [ext_resource type="Script" path="res://scripts/package.gd" id="1_2c8g6"]
-[ext_resource type="Texture2D" uid="uid://c51lwch8fydmb" path="res://sprites/icon.svg" id="1_six0q"]
+[ext_resource type="Texture2D" uid="uid://bmxqe4j2ffgip" path="res://sprites/icon2.svg" id="2_0bwvm"]
 [ext_resource type="PackedScene" uid="uid://by3b7uqdik7jo" path="res://interaction/interaction area/interaction_area.tscn" id="2_dahv1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3u06e"]
@@ -20,7 +20,7 @@ shape = SubResource("RectangleShape2D_3u06e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_six0q")
+texture = ExtResource("2_0bwvm")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_dahv1")]
 action_name = "Pegar Pacote"
