@@ -33,8 +33,10 @@ func move(delta):
 		else:
 			if input_vector.y > 0:
 				sprite.play("run_down")
+				pickup_offset = Vector2(0, 60)
 			else:
 				sprite.play("run_up")
+				pickup_offset = Vector2(0, -60)
 
 func apply_movement(amount) -> void:
 	velocity += amount

@@ -23,7 +23,8 @@ func _process(delta):
 		label.global_position = active_areas[0].global_position
 		label.global_position.y -= 60
 		label.global_position.x -= label.size.x / 2
-		label.show()
+		if Globals.being_carried == false:
+			label.show()
 	else:
 		label.hide()
 
