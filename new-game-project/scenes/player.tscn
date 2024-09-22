@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://533alli5r1v0" path="res://sprites/run_up.png" id="6_mwa1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qd0c"]
-size = Vector2(128, 128)
+size = Vector2(96, 112)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gx1jo"]
 atlas = ExtResource("2_g6g23")
@@ -169,6 +169,7 @@ collision_layer = 2
 script = ExtResource("1_1ccxg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_2qd0c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -177,4 +178,4 @@ position = Vector2(-1, 1)
 scale = Vector2(4.0625, 4.0625)
 sprite_frames = SubResource("SpriteFrames_1fndr")
 animation = &"idle"
-frame_progress = 0.484862
+frame_progress = 0.0312949

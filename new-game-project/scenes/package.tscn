@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bklt6cfemsgv6"]
+[gd_scene load_steps=6 format=3 uid="uid://bklt6cfemsgv6"]
 
 [ext_resource type="Script" path="res://scripts/package.gd" id="1_2c8g6"]
-[ext_resource type="Texture2D" uid="uid://c51lwch8fydmb" path="res://sprites/icon.svg" id="2_bqcgn"]
+[ext_resource type="Texture2D" uid="uid://cva6u1jpy8iyn" path="res://sprites/pacote.png" id="2_8jrjx"]
 [ext_resource type="PackedScene" uid="uid://by3b7uqdik7jo" path="res://scenes/interaction_area.tscn" id="2_dahv1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7ge7"]
+size = Vector2(80, 80)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7schc"]
 radius = 72.0
@@ -12,9 +15,12 @@ collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_2c8g6")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m7ge7")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.625, 0.652778)
-texture = ExtResource("2_bqcgn")
+scale = Vector2(1.25, 1.30556)
+texture = ExtResource("2_8jrjx")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_dahv1")]
 action_name = "Pegar Pacote"
