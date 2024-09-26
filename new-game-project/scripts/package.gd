@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends RigidBody2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 

@@ -3,17 +3,18 @@
 [ext_resource type="Script" path="res://scripts/score_area.gd" id="1_dbb75"]
 [ext_resource type="Texture2D" uid="uid://b4lw2sc5be02j" path="res://sprites/area.png" id="1_m6upy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnnvr"]
-size = Vector2(128, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_igsav"]
+radius = 63.0317
 
-[node name="ScoreArea" type="Node2D"]
+[node name="ScoreArea" type="Area2D"]
 script = ExtResource("1_dbb75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_igsav")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_m6upy")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_rnnvr")
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
