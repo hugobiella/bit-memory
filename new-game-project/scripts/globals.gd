@@ -1,11 +1,12 @@
 extends Node2D
 
 var being_carried = false
+var package_exploded = false
 var score = 0
 
 func add_points(points):
 	score += points
-	print("Pontuação atual: ", score)
+	print("points: ", score)
 
 func get_score():
 	return score

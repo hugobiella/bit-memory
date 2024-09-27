@@ -12,6 +12,8 @@ radius = 79.0063
 
 [node name="package" type="RigidBody2D"]
 gravity_scale = 0.0
+freeze = true
+freeze_mode = 1
 script = ExtResource("1_2c8g6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

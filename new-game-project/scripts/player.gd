@@ -11,7 +11,7 @@ const MAX_SPEED = 500
 func _physics_process(delta):
 	move(delta)
 	
-	if carrying_object:
+	if carrying_object && Globals.package_exploded == false:
 		carrying_object.position = global_position + pickup_offset
 
 func move(delta):
