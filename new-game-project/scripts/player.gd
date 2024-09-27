@@ -2,9 +2,7 @@ extends CharacterBody2D
 
 var pickup_offset  # package position
 var carrying_object = null
-
 const ACCELERATION = 10000
-const MAX_SPEED = 500
 
 @onready var sprite = $AnimatedSprite2D
 
@@ -19,30 +17,31 @@ func move(delta):
 	if input_vector == Vector2.ZERO:
 		velocity = Vector2.ZERO
 		sprite.play("idle")
-		pickup_offset = Vector2(0, -100)
+		pickup_offset = Vector2(0, -90)
 	else:
 		apply_movement(input_vector * ACCELERATION * delta)
 		move_and_slide()
 		if abs(input_vector.x) > abs(input_vector.y):
 			if input_vector.x > 0:
 				sprite.play("run_right")
-				pickup_offset = Vector2(100, 0)
+				pickup_offset = Vector2(90, 0)
 			else:
 				sprite.play("run_left")
-				pickup_offset = Vector2(-100, 0)
+				pickup_offset = Vector2(-90, 0)
 		else:
 			if input_vector.y > 0:
 				sprite.play("run_down")
-				pickup_offset = Vector2(0, 100)
+				pickup_offset = Vector2(0, 90)
 			else:
 				sprite.play("run_up")
-				pickup_offset = Vector2(0, -100)
+				pickup_offset = Vector2(0, -90)
 
 func apply_movement(amount) -> void:
 	velocity += amount
-	velocity = velocity.limit_length(MAX_SPEED)
+	velocity = velocity.limit_length(Globals.MAX_SPEED)
 
 func pickup_object(object: RigidBody2D):
+	Globals.package_exploded = false
 	carrying_object = object
 	object.get_parent().remove_child(object)
 	get_parent().add_child(object)

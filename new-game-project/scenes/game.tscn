@@ -11,8 +11,8 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
 
-[node name="PackageGenerator" parent="." instance=ExtResource("3_xmbt7")]
-position = Vector2(-320, 0)
+[node name="PackageGenerator3" parent="." instance=ExtResource("3_xmbt7")]
+position = Vector2(-256, 0)
 
 [node name="ScoreArea" parent="." instance=ExtResource("3_nqsge")]
 position = Vector2(256, 0)
