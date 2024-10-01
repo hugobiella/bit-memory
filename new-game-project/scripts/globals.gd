@@ -2,7 +2,7 @@ extends Node2D
 
 var being_carried = false
 var package_exploded = false
-const MAX_SPEED = 1000 #player speed
+const MAX_SPEED = 1000 # player speed
 var score = 0
 
 func add_points(points):

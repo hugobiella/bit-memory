@@ -45,7 +45,7 @@ func pickup_object(object: RigidBody2D):
 	carrying_object = object
 	object.get_parent().remove_child(object)
 	get_parent().add_child(object)
-	carrying_object.position = global_position + pickup_offset
+	#carrying_object.position = global_position + pickup_offset
 
 func drop_object():
 	if carrying_object:
