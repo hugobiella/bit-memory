@@ -14,7 +14,7 @@ func _ready():
 		if child != input_scene_instance:
 			child.hide()
 
-func _on_input_received(amount: int):
+func _on_input_received(_amount: int):
 	# Remover a cena de entrada e mostrar o resto do jogo
 	input_scene_instance.queue_free()
 	

@@ -7,9 +7,14 @@ var packages_generated: Array = []
 func _ready():
 	set_physics_process(true)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if packages_generated.size() < Globals.amount_to_generate:
 		generate_package()
+		
+		#remove deleted packages from list
+	#for package in packages_generated:
+		#if not is_instance_valid(package):
+			#packages_generated.erase(package)
 
 func generate_package():
 	var random_angle = randf_range(0, 2 * PI)
