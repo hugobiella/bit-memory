@@ -8,7 +8,6 @@ const ACCELERATION = 10000
 
 func _physics_process(delta):
 	move(delta)
-	
 	if carrying_object && Globals.package_exploded == false:
 		carrying_object.position = global_position + pickup_offset
 

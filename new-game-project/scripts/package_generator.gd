@@ -1,9 +1,9 @@
 extends Node2D
 
 @export var package_scene: PackedScene
-@export var generation_interval: float = 2.5
+@export var generation_interval: float = 0
 @export var max_packages: int = 3
-@export var spawn_area_radius: float = 500.0
+@export var spawn_area_radius: float = 200.0
 var packages_generated: Array = []
 var time_since_last_generation: float = 0.0
 
