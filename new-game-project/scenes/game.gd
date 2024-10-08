@@ -5,7 +5,7 @@ var input_scene_instance: Node
 
 func _ready():
 	# Carregar a cena de entrada
-	input_scene = preload("res://scenes/ui/input scene.tscn")  # Ajuste o caminho conforme necessário
+	input_scene = preload("res://scenes/ui/input_manager.tscn")  # Ajuste o caminho conforme necessário
 	input_scene_instance = input_scene.instantiate()
 	add_child(input_scene_instance)
 	

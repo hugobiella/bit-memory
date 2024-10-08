@@ -1,8 +1,5 @@
 extends Node2D
 
-func _ready():
-	pass
-
 func _on_button_pressed():
 	var input_text = $LineEdit.text.strip_edges()
 	var input_value = input_text.to_int()

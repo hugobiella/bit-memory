@@ -24,6 +24,10 @@ Globals="*res://scenes/globals.tscn"
 
 window/stretch/scale=1.5
 
+[gui]
+
+theme/custom_font="res://assets/PixelOperator8.ttf"
+
 [input]
 
 move_left={
