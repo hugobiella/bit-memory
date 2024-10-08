@@ -29,4 +29,4 @@ func _generate_virtual_address():
 	var physical_address = (page_table[page_number] << 12) | offset
 	label.text = "0x%X" % virtual_address
 	print("virtual_address: 0x%X" % virtual_address)
-	print("physical_address: 0x%X" % physical_address)
+	#print("physical_address: 0x%X" % physical_address)
