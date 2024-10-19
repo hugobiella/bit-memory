@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dud7y3o87pqwc"]
+
+[ext_resource type="Script" path="res://scenes/effects/walking.gd" id="1_ffaf6"]
+
+[node name="Walking" type="Node2D"]
+script = ExtResource("1_ffaf6")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+gravity = Vector2(0, 0)

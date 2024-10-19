@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var package_scene: PackedScene
-@export var spawn_area_radius: float = 200.0
 var score_generated: Array = []
 
 var grid_offset = 250

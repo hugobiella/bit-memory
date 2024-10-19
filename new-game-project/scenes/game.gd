@@ -3,9 +3,6 @@ extends Node2D
 var input_scene: PackedScene
 var input_scene_instance: Node
 
-#func _physics_process(delta):
-	#print(Globals.physical_address_array)
-
 func _ready():
 	input_scene = preload("res://scenes/ui/input_manager.tscn")
 	input_scene_instance = input_scene.instantiate()
