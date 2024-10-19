@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cscqtspqth4ol"]
+
+[ext_resource type="Script" path="res://scenes/score_generator.gd" id="1_hufsk"]
+[ext_resource type="PackedScene" uid="uid://e1hitv2dch32" path="res://scenes/score_area.tscn" id="2_5hg43"]
+
+[node name="ScoreGenerator" type="Node2D"]
+script = ExtResource("1_hufsk")
+package_scene = ExtResource("2_5hg43")

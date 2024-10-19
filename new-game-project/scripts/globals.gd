@@ -7,6 +7,8 @@ var lock_player = true
 var score = 0
 
 var amount_to_generate = 0
+var physical_address_array = []
+var virtual_address_array = []
 
 func add_points(points):
 	score += points

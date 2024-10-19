@@ -1,26 +1,32 @@
 extends Node2D
 
 @export var package_scene: PackedScene
-@export var spawn_area_radius: float = 200.0
 var packages_generated: Array = []
+
+var grid_offset = 250
+var grid_columns = 2
 
 func _ready():
 	set_physics_process(true)
 
 func _physics_process(_delta):
 	if packages_generated.size() < Globals.amount_to_generate:
-		generate_package()
-		
-		#remove deleted packages from list
-	#for package in packages_generated:
-		#if not is_instance_valid(package):
-			#packages_generated.erase(package)
+		generate_package_grid()
 
-func generate_package():
-	var random_angle = randf_range(0, 2 * PI)
-	var random_radius = randf_range(0, spawn_area_radius)
-	var random_position = Vector2(cos(random_angle), sin(random_angle)) * random_radius
+func generate_package_grid():
+	var count = packages_generated.size()
+	var rows = ceil(float(Globals.amount_to_generate) / float(grid_columns))
+
+	for row in range(rows):
+		for column in range(grid_columns):
+			if count >= Globals.amount_to_generate:
+				return
+			var position_in_grid = Vector2(column * grid_offset, row * grid_offset)
+			generate_package_at_position(position_in_grid)
+			count += 1
+
+func generate_package_at_position(position_in_grid: Vector2):
 	var package_instance = package_scene.instantiate() as RigidBody2D
 	add_child(package_instance)
-	package_instance.position = global_position + random_position
+	package_instance.position = global_position + position_in_grid
 	packages_generated.append(package_instance)

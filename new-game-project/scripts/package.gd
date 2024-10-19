@@ -6,8 +6,8 @@ func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	_generate_virtual_address()
 	label.add_theme_color_override("font_color", Color(0, 0, 0))
-	label.global_position.y = 50
-	label.global_position.x = -330
+	label.position.y = 50
+	label.position.x = -70
 	label.show()
 
 func _on_interact():
@@ -27,6 +27,10 @@ func _generate_virtual_address():
 		page_table[page_number] = randi() % 0xFFFFF
 	var offset = virtual_address & 0xFFF
 	var physical_address = (page_table[page_number] << 12) | offset
+	Globals.virtual_address_array.append(virtual_address)
+	Globals.physical_address_array.append(physical_address)
 	label.text = "0x%X" % virtual_address
-	print("virtual_address: 0x%X" % virtual_address)
+	#print("virtual_address: 0x%X" % virtual_address)
 	#print("physical_address: 0x%X" % physical_address)
+	#for value in Globals.physical_address_array:
+		#print("0x%X" % value)
