@@ -1,11 +1,12 @@
 extends Node2D
 
+@onready var particles = $CPUParticles2D  # Referência ao nó de partículas
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	particles.emitting = false  # Certifique-se de que as partículas estão desativadas no início
 
+func start_particles():
+	particles.emitting = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func stop_particles():
+	particles.emitting = false

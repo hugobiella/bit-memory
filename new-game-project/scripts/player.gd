@@ -5,6 +5,7 @@ var carrying_object = null
 const ACCELERATION = 10000
 
 @onready var sprite = $AnimatedSprite2D
+@onready var particles = $Walking
 
 func _physics_process(delta):
 	move(delta)
@@ -12,15 +13,17 @@ func _physics_process(delta):
 		carrying_object.position = global_position + pickup_offset
 
 func move(delta):
-	if Globals.lock_player == false: # checks if player has been unlock via amount to generate scene
+	if Globals.lock_player == false:
 		var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		if input_vector == Vector2.ZERO:
 			velocity = Vector2.ZERO
 			sprite.play("idle")
 			pickup_offset = Vector2(0, -90)
+			particles.stop_particles()
 		else:
 			apply_movement(input_vector * ACCELERATION * delta)
 			move_and_slide()
+			particles.start_particles()
 			if abs(input_vector.x) > abs(input_vector.y):
 				if input_vector.x > 0:
 					sprite.play("run_right")

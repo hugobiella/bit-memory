@@ -1,9 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://dud7y3o87pqwc"]
+[gd_scene load_steps=3 format=3 uid="uid://dud7y3o87pqwc"]
 
 [ext_resource type="Script" path="res://scenes/effects/walking.gd" id="1_ffaf6"]
+
+[sub_resource type="Curve" id="Curve_umlbn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Walking" type="Node2D"]
 script = ExtResource("1_ffaf6")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-gravity = Vector2(0, 0)
+light_mask = 0
+visibility_layer = 16
+amount = 20
+emission_shape = 2
+emission_sphere_radius = 15.0
+direction = Vector2(0, -15)
+spread = 180.0
+gravity = Vector2(0, -500)
+angular_velocity_min = 720.0
+angular_velocity_max = 720.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_umlbn")
+color = Color(0, 0, 0, 1)
