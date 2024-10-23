@@ -19,18 +19,21 @@ func _on_interact():
 		player.drop_object()
 		Globals.being_carried = false
 
+var virtual_address = 0
+var page_number = 0
+var offset = 0
 var page_table = {}
+
 func _generate_virtual_address():
-	var virtual_address = randi() % 0xFFFFFFFF
-	var page_number = virtual_address >> 12
+	virtual_address = randi() % 0xFFFFFFFF
+	page_number = virtual_address >> 12
 	if page_number not in page_table:
 		page_table[page_number] = randi() % 0xFFFFF
-	var offset = virtual_address & 0xFFF
+	offset = virtual_address & 0xFFF
 	var physical_address = (page_table[page_number] << 12) | offset
 	Globals.virtual_address_array.append(virtual_address)
 	Globals.physical_address_array.append(physical_address)
 	label.text = "0x%X" % virtual_address
-	#print("virtual_address: 0x%X" % virtual_address)
-	#print("physical_address: 0x%X" % physical_address)
-	#for value in Globals.physical_address_array:
-		#print("0x%X" % value)
+
+func get_offset():
+	return offset

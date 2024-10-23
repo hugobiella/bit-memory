@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://e1hitv2dch32"]
+[gd_scene load_steps=6 format=3 uid="uid://e1hitv2dch32"]
 
 [ext_resource type="Script" path="res://scripts/score_area.gd" id="1_dbb75"]
 [ext_resource type="Texture2D" uid="uid://b4lw2sc5be02j" path="res://sprites/area.png" id="1_m6upy"]
+[ext_resource type="Texture2D" uid="uid://m35phn67grif" path="res://sprites/area_check.png" id="2_rxk41"]
 [ext_resource type="PackedScene" uid="uid://cl5u6lvv782y0" path="res://scenes/effects/explosion.tscn" id="3_sfytd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_igsav"]
@@ -20,7 +21,11 @@ offset_bottom = -56.0
 position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_igsav")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="uncheck" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_rxk41")
+
+[node name="check" type="Sprite2D" parent="."]
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("1_m6upy")
 
