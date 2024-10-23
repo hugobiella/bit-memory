@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dpf6de5imqxlt" path="res://scenes/player.tscn" id="1_1hgf2"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_fpu7j"]
-[ext_resource type="Script" path="res://scenes/score_label.gd" id="3_0qtxr"]
+[ext_resource type="Script" path="res://scripts/score_label.gd" id="3_0qtxr"]
 [ext_resource type="PackedScene" uid="uid://bf2r4iw1hqxy7" path="res://scenes/package_generator.tscn" id="3_xmbt7"]
 [ext_resource type="PackedScene" uid="uid://cscqtspqth4ol" path="res://scenes/score_generator.tscn" id="4_00sjm"]
 
@@ -20,11 +20,11 @@ offset_top = -443.0
 offset_right = -593.0
 offset_bottom = -411.0
 theme_override_font_sizes/font_size = 32
-text = "Score: 0"
+text = "Pontos: 0"
 script = ExtResource("3_0qtxr")
 
 [node name="PackageGenerator3" parent="." instance=ExtResource("3_xmbt7")]
-position = Vector2(-256, 0)
+position = Vector2(-320, 0)
 
 [node name="ScoreGenerator" parent="." instance=ExtResource("4_00sjm")]
-position = Vector2(256, 0)
+position = Vector2(320, 0)

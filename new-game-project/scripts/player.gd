@@ -18,7 +18,7 @@ func move(delta):
 		if input_vector == Vector2.ZERO:
 			velocity = Vector2.ZERO
 			sprite.play("idle")
-			pickup_offset = Vector2(0, -90)
+			pickup_offset = Vector2(0, -110)
 			particles.stop_particles()
 		else:
 			apply_movement(input_vector * ACCELERATION * delta)
