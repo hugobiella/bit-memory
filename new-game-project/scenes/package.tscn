@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bklt6cfemsgv6"]
 
 [ext_resource type="Script" path="res://scripts/package.gd" id="1_2c8g6"]
-[ext_resource type="Texture2D" uid="uid://cva6u1jpy8iyn" path="res://sprites/pacote.png" id="2_8jrjx"]
+[ext_resource type="Texture2D" uid="uid://cva6u1jpy8iyn" path="res://assets/sprites/pacote.png" id="2_8jrjx"]
 [ext_resource type="PackedScene" uid="uid://by3b7uqdik7jo" path="res://scenes/interaction_area.tscn" id="2_dahv1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m7ge7"]

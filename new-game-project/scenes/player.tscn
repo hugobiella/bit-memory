@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://dpf6de5imqxlt"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1ccxg"]
-[ext_resource type="Texture2D" uid="uid://ci40ysqtk0yyq" path="res://sprites/idle.png" id="2_g6g23"]
-[ext_resource type="Texture2D" uid="uid://86oqyjf4m56c" path="res://sprites/run_down.png" id="3_gnyn7"]
-[ext_resource type="Texture2D" uid="uid://cbawhon7bvn24" path="res://sprites/run_left.png" id="4_1725w"]
-[ext_resource type="Texture2D" uid="uid://cmx7nce6fpxe8" path="res://sprites/run_right.png" id="5_0qndy"]
-[ext_resource type="Texture2D" uid="uid://533alli5r1v0" path="res://sprites/run_up.png" id="6_mwa1j"]
+[ext_resource type="Texture2D" uid="uid://ci40ysqtk0yyq" path="res://assets/sprites/idle.png" id="2_g6g23"]
+[ext_resource type="Texture2D" uid="uid://86oqyjf4m56c" path="res://assets/sprites/run_down.png" id="3_gnyn7"]
+[ext_resource type="Texture2D" uid="uid://cbawhon7bvn24" path="res://assets/sprites/run_left.png" id="4_1725w"]
+[ext_resource type="Texture2D" uid="uid://cmx7nce6fpxe8" path="res://assets/sprites/run_right.png" id="5_0qndy"]
+[ext_resource type="Texture2D" uid="uid://533alli5r1v0" path="res://assets/sprites/run_up.png" id="6_mwa1j"]
 [ext_resource type="PackedScene" uid="uid://dud7y3o87pqwc" path="res://scenes/effects/walking.tscn" id="7_adby6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qd0c"]

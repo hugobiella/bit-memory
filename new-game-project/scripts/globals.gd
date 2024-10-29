@@ -12,4 +12,3 @@ var virtual_address_array = []
 
 func add_points(points):
 	score += points
-	print("points: ", score)

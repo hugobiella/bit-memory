@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var particles = $CPUParticles2D  # Referência ao nó de partículas
+@onready var particles = $CPUParticles2D
 
 func _ready():
-	particles.emitting = false  # Certifique-se de que as partículas estão desativadas no início
+	particles.emitting = false
 
 func start_particles():
 	particles.emitting = true

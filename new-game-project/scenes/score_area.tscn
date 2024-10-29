@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://e1hitv2dch32"]
 
 [ext_resource type="Script" path="res://scripts/score_area.gd" id="1_dbb75"]
-[ext_resource type="Texture2D" uid="uid://b4lw2sc5be02j" path="res://sprites/area.png" id="1_m6upy"]
-[ext_resource type="Texture2D" uid="uid://m35phn67grif" path="res://sprites/area_check.png" id="2_rxk41"]
+[ext_resource type="Texture2D" uid="uid://b4lw2sc5be02j" path="res://assets/sprites/area.png" id="1_m6upy"]
+[ext_resource type="Texture2D" uid="uid://m35phn67grif" path="res://assets/sprites/area_check.png" id="2_rxk41"]
 [ext_resource type="PackedScene" uid="uid://cl5u6lvv782y0" path="res://scenes/effects/explosion.tscn" id="3_sfytd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_igsav"]

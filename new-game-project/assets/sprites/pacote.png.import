@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m35phn67grif"
-path="res://.godot/imported/area_check.png-f0e309657e170cffca330bec4549cbd7.ctex"
+uid="uid://cva6u1jpy8iyn"
+path="res://.godot/imported/pacote.png-99dc912d82518dfef61926c51759ce4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/area_check.png"
-dest_files=["res://.godot/imported/area_check.png-f0e309657e170cffca330bec4549cbd7.ctex"]
+source_file="res://assets/sprites/pacote.png"
+dest_files=["res://.godot/imported/pacote.png-99dc912d82518dfef61926c51759ce4c.ctex"]
 
 [params]
 

@@ -10,8 +10,8 @@ func _ready():
 	label.position.y = 70
 	label.position.x = -70
 	label.show()
-	uncheck_sprite.visible = false   # Certifique-se de que uncheck está visível
-	check_sprite.visible = true      # Verifique que check está escondido inicialmente
+	uncheck_sprite.visible = false
+	check_sprite.visible = true
 	var physical_address = get_random_physical_address()
 	label.text = "0x%X" % physical_address
 
@@ -26,7 +26,7 @@ func _on_body_entered(body):
 		if virtual_offset == physical_offset:
 			explosion.explode()
 			Globals.package_exploded = true
-			Globals.add_points(10)
+			Globals.add_points(1)
 			print("deleting package...")
 			Globals.being_carried = false
 			body.queue_free()

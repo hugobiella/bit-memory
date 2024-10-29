@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2s5725v4o3c8"]
+[gd_scene load_steps=8 format=3 uid="uid://c2s5725v4o3c8"]
 
 [ext_resource type="PackedScene" uid="uid://dpf6de5imqxlt" path="res://scenes/player.tscn" id="1_1hgf2"]
-[ext_resource type="Script" path="res://scenes/game.gd" id="1_fpu7j"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_fpu7j"]
 [ext_resource type="Script" path="res://scripts/score_label.gd" id="3_0qtxr"]
 [ext_resource type="PackedScene" uid="uid://bf2r4iw1hqxy7" path="res://scenes/package_generator.tscn" id="3_xmbt7"]
 [ext_resource type="PackedScene" uid="uid://cscqtspqth4ol" path="res://scenes/score_generator.tscn" id="4_00sjm"]
+[ext_resource type="FontFile" uid="uid://chocn6vghi480" path="res://assets/PixelOperator8.ttf" id="6_3ty46"]
+[ext_resource type="Script" path="res://scripts/progress_bar.gd" id="7_uax86"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_fpu7j")
@@ -23,8 +25,17 @@ theme_override_font_sizes/font_size = 32
 text = "Pontos: 0"
 script = ExtResource("3_0qtxr")
 
+[node name="ProgressBar" type="ProgressBar" parent="player/Camera2D"]
+offset_left = -384.0
+offset_top = 360.0
+offset_right = 384.0
+offset_bottom = 416.0
+theme_override_fonts/font = ExtResource("6_3ty46")
+theme_override_font_sizes/font_size = 32
+script = ExtResource("7_uax86")
+
 [node name="PackageGenerator3" parent="." instance=ExtResource("3_xmbt7")]
-position = Vector2(-320, 0)
+position = Vector2(-192, 0)
 
 [node name="ScoreGenerator" parent="." instance=ExtResource("4_00sjm")]
-position = Vector2(320, 0)
+position = Vector2(192, 0)
