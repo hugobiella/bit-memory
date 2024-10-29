@@ -27,7 +27,6 @@ func _on_body_entered(body):
 			explosion.explode()
 			Globals.package_exploded = true
 			Globals.add_points(1)
-			print("deleting package...")
 			Globals.being_carried = false
 			body.queue_free()
 			update_sprite_visibility()
