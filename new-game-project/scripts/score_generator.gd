@@ -16,7 +16,6 @@ func _physics_process(_delta):
 func generate_score_grid():
 	var count = score_generated.size()
 	var rows = ceil(float(Globals.amount_to_generate) / float(grid_columns))
-
 	for row in range(rows):
 		for column in range(grid_columns):
 			if count >= Globals.amount_to_generate:

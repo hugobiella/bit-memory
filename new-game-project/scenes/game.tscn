@@ -32,10 +32,11 @@ offset_right = 384.0
 offset_bottom = 416.0
 theme_override_fonts/font = ExtResource("6_3ty46")
 theme_override_font_sizes/font_size = 32
+step = 1.0
 script = ExtResource("7_uax86")
 
 [node name="PackageGenerator3" parent="." instance=ExtResource("3_xmbt7")]
-position = Vector2(-192, 0)
+position = Vector2(-256, 0)
 
 [node name="ScoreGenerator" parent="." instance=ExtResource("4_00sjm")]
 position = Vector2(192, 0)
