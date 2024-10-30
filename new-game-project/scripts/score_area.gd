@@ -8,13 +8,14 @@ extends Area2D
 func _ready():
 	label.add_theme_color_override("font_color", Color(0, 0, 0))
 	label.position.y = 70
-	label.position.x = -70
+	label.position.x = -50
 	label.show()
 	uncheck_sprite.visible = false
 	check_sprite.visible = true
-	var physical_address = get_random_physical_address()
-	label.text = "0x%X" % physical_address
+	physical_address = get_random_physical_address()
+	label.text = "0x%05X" % physical_address
 
+var physical_address
 var virtual_offset
 var physical_offset
 var body_script
@@ -30,7 +31,8 @@ func _on_body_entered(body):
 			Globals.being_carried = false
 			body.queue_free()
 			update_sprite_visibility()
-			label.text = ""
+			label.position.x = -70
+			label.text = "0x%05X%03X" % [physical_address, physical_offset]
 
 func update_sprite_visibility():
 	uncheck_sprite.visible = true
@@ -41,4 +43,5 @@ func get_random_physical_address():
 	var address = Globals.physical_address_array[random_index]
 	Globals.physical_address_array.remove_at(random_index)
 	physical_offset = address & 0xFFF
+	address = address >> 12
 	return address

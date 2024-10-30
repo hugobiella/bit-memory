@@ -34,9 +34,8 @@ func _generate_virtual_address():
 	Globals.virtual_address_array.append(virtual_address)
 	Globals.physical_address_array.append(physical_address)
 	label.text = "0x%X" % virtual_address
-	print("Page Table:")
 	for key in page_table:
-		print("Page Number: %05X, Frame Number: %05X" % [key, page_table[key]])
+		print("Virtual Page #: %05X\nPhysical Page #: %05X\nOffset #: %03X\n" % [key, page_table[key], offset])
 
 func get_offset():
 	return offset
