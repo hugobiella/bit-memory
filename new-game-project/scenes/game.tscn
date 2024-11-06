@@ -16,13 +16,21 @@ script = ExtResource("1_fpu7j")
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(0.2, 0.2)
 
+[node name="Label" type="Label" parent="player/Camera2D"]
+offset_left = -104.0
+offset_top = -443.0
+offset_right = 108.0
+offset_bottom = -411.0
+theme_override_font_sizes/font_size = 32
+text = "Tempo: 0"
+
 [node name="ScoreLabel" type="Label" parent="player/Camera2D"]
 offset_left = -797.0
 offset_top = -443.0
 offset_right = -593.0
 offset_bottom = -411.0
 theme_override_font_sizes/font_size = 32
-text = "Pontos: 0"
+text = "Pontuação: 0"
 script = ExtResource("3_0qtxr")
 
 [node name="ProgressBar" type="ProgressBar" parent="player/Camera2D"]

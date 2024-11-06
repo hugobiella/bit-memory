@@ -7,7 +7,7 @@ func _ready():
 	_generate_virtual_address()
 	label.add_theme_color_override("font_color", Color(0, 0, 0))
 	label.position.y = 50
-	label.position.x = -70
+	label.position.x = -50
 	label.show()
 
 func _on_interact():
@@ -33,7 +33,7 @@ func _generate_virtual_address():
 	var physical_address = (page_table[page_number] << 12) | offset
 	Globals.virtual_address_array.append(virtual_address)
 	Globals.physical_address_array.append(physical_address)
-	label.text = "0x%X" % virtual_address
+	label.text = "0x%05X" % page_number
 	for key in page_table:
 		print("Virtual Page #: %05X\nPhysical Page #: %05X\nOffset #: %03X\n" % [key, page_table[key], offset])
 

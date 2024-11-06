@@ -13,7 +13,7 @@ func _ready():
 	uncheck_sprite.visible = false
 	check_sprite.visible = true
 	physical_address = get_random_physical_address()
-	label.text = "0x%05X" % physical_address
+	label.text = " "
 
 var physical_address
 var virtual_offset
@@ -24,15 +24,15 @@ func _on_body_entered(body):
 	if body is RigidBody2D:
 		body_script = body.get_script()
 		virtual_offset = body.get_offset()
-		if virtual_offset == physical_offset:
+		if virtual_offset == physical_offset && Globals.being_carried == false:
 			explosion.explode()
 			Globals.package_exploded = true
 			Globals.add_points(1)
 			Globals.being_carried = false
 			body.queue_free()
 			update_sprite_visibility()
-			label.position.x = -70
-			label.text = "0x%05X%03X" % [physical_address, physical_offset]
+			label.position.x = -50
+			label.text = "0x%05X" % [physical_address]
 
 func update_sprite_visibility():
 	uncheck_sprite.visible = true

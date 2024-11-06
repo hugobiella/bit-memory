@@ -8,7 +8,7 @@
 size = Vector2(77, 81)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7schc"]
-radius = 79.0063
+radius = 96.0
 
 [node name="package" type="RigidBody2D"]
 gravity_scale = 0.0
