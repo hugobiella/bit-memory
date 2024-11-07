@@ -4,7 +4,7 @@ extends Node2D
 var score_generated: Array = []
 
 var grid_offset = 250
-var grid_columns = 2
+var grid_columns = 3
 
 func _ready():
 	set_physics_process(true)

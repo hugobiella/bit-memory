@@ -68,9 +68,9 @@ text = "Páginas"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 416.0
+offset_left = 543.0
 offset_top = -192.0
-offset_right = 612.0
+offset_right = 739.0
 offset_bottom = -160.0
 theme_override_font_sizes/font_size = 32
 text = "Quadros"
