@@ -30,13 +30,10 @@ func _generate_virtual_address():
 	if page_number not in page_table:
 		page_table[page_number] = randi() % 0xFFFFF
 	offset = virtual_address & 0xFFF
-	var physical_address = (page_table[page_number] << 12) | offset
+	var physical_address = (page_table[page_number] << 12)
 	Globals.virtual_address_array.append(virtual_address)
-	Globals.physical_address_array.append(physical_address)
 	Globals.physical_address_array_copy.append(physical_address)
 	label.text = "0x%05X" % [page_number]
-	for key in page_table:
-		print("\nOffset #: %03X\nVirtual Page #: %05X\nPhysical Page #: %05X" % [offset, key, page_table[key]])
 
 func get_offset():
 	return offset

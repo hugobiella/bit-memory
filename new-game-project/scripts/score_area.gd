@@ -24,6 +24,8 @@ func _on_body_entered(body):
 		body_script = body.get_script()
 		offset = body.get_offset()
 		if Globals.being_carried == false:
+			physical_address = (physical_address << 12) | offset
+			Globals.physical_address_array.append(physical_address)
 			explosion.explode()
 			Globals.package_exploded = true
 			Globals.add_points(1)
@@ -31,7 +33,7 @@ func _on_body_entered(body):
 			body.queue_free()
 			update_sprite_visibility()
 			label.position.x = -70
-			label.text = "0x%05X%03X" % [physical_address, offset]
+			label.text = "0x%08X" % [physical_address]
 
 func update_sprite_visibility():
 	uncheck_sprite.visible = true
