@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2s5725v4o3c8"]
+[gd_scene load_steps=7 format=3 uid="uid://c2s5725v4o3c8"]
 
 [ext_resource type="PackedScene" uid="uid://dpf6de5imqxlt" path="res://scenes/player.tscn" id="1_1hgf2"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_fpu7j"]
-[ext_resource type="Script" path="res://scripts/score_label.gd" id="3_0qtxr"]
 [ext_resource type="PackedScene" uid="uid://bf2r4iw1hqxy7" path="res://scenes/package_generator.tscn" id="3_xmbt7"]
 [ext_resource type="PackedScene" uid="uid://cscqtspqth4ol" path="res://scenes/score_generator.tscn" id="4_00sjm"]
 [ext_resource type="FontFile" uid="uid://chocn6vghi480" path="res://assets/PixelOperator8.ttf" id="6_3ty46"]
@@ -16,23 +15,6 @@ script = ExtResource("1_fpu7j")
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(0.2, 0.2)
 
-[node name="Label" type="Label" parent="player/Camera2D"]
-offset_left = -104.0
-offset_top = -443.0
-offset_right = 108.0
-offset_bottom = -411.0
-theme_override_font_sizes/font_size = 32
-text = "Tempo: 0"
-
-[node name="ScoreLabel" type="Label" parent="player/Camera2D"]
-offset_left = -797.0
-offset_top = -443.0
-offset_right = -593.0
-offset_bottom = -411.0
-theme_override_font_sizes/font_size = 32
-text = "Pontuação: 0"
-script = ExtResource("3_0qtxr")
-
 [node name="ProgressBar" type="ProgressBar" parent="player/Camera2D"]
 offset_left = -384.0
 offset_top = 360.0
@@ -43,14 +25,13 @@ theme_override_font_sizes/font_size = 32
 step = 1.0
 script = ExtResource("7_uax86")
 
-[node name="PageTableLabel" type="Label" parent="player/Camera2D"]
-offset_left = -256.0
-offset_top = 296.0
-offset_right = 252.0
-offset_bottom = 328.0
+[node name="Label" type="Label" parent="player/Camera2D"]
+offset_left = -213.0
+offset_top = -441.0
+offset_right = 211.0
+offset_bottom = -409.0
 theme_override_font_sizes/font_size = 32
-text = "Q) Tabela de páginas"
-horizontal_alignment = 1
+text = "Fase 1 : Alocação"
 
 [node name="PackageGenerator3" parent="." instance=ExtResource("3_xmbt7")]
 position = Vector2(-256, 0)
