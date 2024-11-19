@@ -15,9 +15,12 @@ func _ready():
 		return
 
 	grid_container.columns = 3
-	grid_container.add_child(create_label("Endereço Lógico     "))
-	grid_container.add_child(create_label("Endereço Físico     "))
+	grid_container.add_child(create_label("Endereço Lógico  "))
+	grid_container.add_child(create_label("Endereço Físico  "))
 	grid_container.add_child(create_label("Deslocamento"))
+	grid_container.add_child(create_label(" "))
+	grid_container.add_child(create_label(" "))
+	grid_container.add_child(create_label(" "))
 	
 	for virtual_address in Globals.virtual_address_array:
 		var offset_virtual = extract_offset(virtual_address)
@@ -34,11 +37,13 @@ func _ready():
 				grid_container.add_child(create_label(formatted_virtual_address))
 				grid_container.add_child(create_label(formatted_physical_address))
 				grid_container.add_child(create_label(formatted_offset_virtual))
+				print("Endereço Virtual e Físico correspondem: ", formatted_virtual_address, " --> ", formatted_physical_address)
 				break
 
 func create_label(text) -> Label:
 	var label = Label.new()
 	label.text = text
+	label.add_theme_font_size_override("font_size", 21)
 	return label
 
 func extract_offset(address):

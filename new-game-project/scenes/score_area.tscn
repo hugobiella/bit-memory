@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://m35phn67grif" path="res://assets/sprites/area_check.png" id="2_rxk41"]
 [ext_resource type="PackedScene" uid="uid://cl5u6lvv782y0" path="res://scenes/effects/explosion.tscn" id="3_sfytd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_igsav"]
-radius = 47.0106
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl5ax"]
+size = Vector2(80, 80)
 
 [node name="ScoreArea" type="Area2D"]
 script = ExtResource("1_dbb75")
@@ -18,15 +18,14 @@ offset_right = 64.0
 offset_bottom = -56.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
-shape = SubResource("CircleShape2D_igsav")
+shape = SubResource("RectangleShape2D_gl5ax")
 
 [node name="uncheck" type="Sprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_rxk41")
 
 [node name="check" type="Sprite2D" parent="."]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_m6upy")
 
 [node name="Explosion" parent="." instance=ExtResource("3_sfytd")]

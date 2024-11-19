@@ -12,13 +12,6 @@ func _physics_process(delta):
 	if carrying_object && Globals.package_exploded == false:
 		carrying_object.position = global_position + pickup_offset
 
-func _input(event):
-	if event.is_action_pressed("page_table"):
-		for address in Globals.physical_address_array:
-			print("0x%X" % address)
-		for address in Globals.virtual_address_array:
-			print("0x%X" % address)
-
 func move(delta):
 	if Globals.lock_player == false:
 		var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
