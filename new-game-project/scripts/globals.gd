@@ -1,6 +1,6 @@
 extends Node2D
 
-const MAX_SPEED = 1000 # player speed
+const MAX_SPEED = 1500 # player speed
 var being_carried = false
 var package_exploded = false
 var lock_player = true
