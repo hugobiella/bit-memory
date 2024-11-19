@@ -28,7 +28,7 @@ offset_top = -384.0
 offset_bottom = 400.0
 script = ExtResource("2_q3wrj")
 
-[node name="Label" type="Label" parent="LeftPanel"]
+[node name="Label_va" type="Label" parent="LeftPanel"]
 layout_mode = 0
 offset_left = 168.0
 offset_top = 248.0
@@ -38,17 +38,16 @@ theme_override_font_sizes/font_size = 36
 text = "endereço lógico"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="LeftPanel"]
+[node name="Label_check" type="Label" parent="LeftPanel"]
 layout_mode = 0
-offset_left = 312.0
-offset_top = 493.0
-offset_right = 504.0
-offset_bottom = 530.0
+offset_left = 167.0
+offset_top = 560.0
+offset_right = 359.0
+offset_bottom = 597.0
 theme_override_font_sizes/font_size = 36
-text = "check!"
 horizontal_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="LeftPanel"]
+[node name="LE_pa" type="LineEdit" parent="LeftPanel"]
 layout_mode = 0
 offset_left = 152.0
 offset_top = 320.0
@@ -58,7 +57,7 @@ theme_override_font_sizes/font_size = 36
 placeholder_text = "endereço físico"
 alignment = 1
 
-[node name="LineEdit2" type="LineEdit" parent="LeftPanel"]
+[node name="LE_offset" type="LineEdit" parent="LeftPanel"]
 layout_mode = 0
 offset_left = 152.0
 offset_top = 408.0
@@ -70,11 +69,12 @@ alignment = 1
 
 [node name="Button" type="Button" parent="LeftPanel"]
 layout_mode = 0
-offset_left = 152.0
+offset_left = 372.0
 offset_top = 488.0
-offset_right = 223.0
+offset_right = 443.0
 offset_bottom = 533.0
 theme_override_font_sizes/font_size = 36
+action_mode = 0
 text = "Ok"
 
 [node name="RightPanel" type="Panel" parent="."]
@@ -89,3 +89,5 @@ script = ExtResource("3_ex2it")
 layout_mode = 0
 offset_right = 784.0
 offset_bottom = 784.0
+
+[connection signal="pressed" from="LeftPanel/Button" to="LeftPanel" method="_on_button_pressed"]
