@@ -4,6 +4,7 @@ extends Area2D
 @onready var label = $Label
 @onready var uncheck_sprite = $uncheck
 @onready var check_sprite = $check
+@onready var scoresfx = $scoresfx
 
 func _ready():
 	label.add_theme_color_override("font_color", Color(0, 0, 0))
@@ -34,6 +35,7 @@ func _on_body_entered(body):
 			update_sprite_visibility()
 			label.position.x = -50
 			label.text = "0x%05X" % [physical_address >> 12]
+			scoresfx.play()
 
 func update_sprite_visibility():
 	uncheck_sprite.visible = true

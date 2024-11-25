@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://e1hitv2dch32"]
+[gd_scene load_steps=7 format=3 uid="uid://e1hitv2dch32"]
 
 [ext_resource type="Script" path="res://scripts/score_area.gd" id="1_dbb75"]
 [ext_resource type="Texture2D" uid="uid://b4lw2sc5be02j" path="res://assets/sprites/area.png" id="1_m6upy"]
 [ext_resource type="Texture2D" uid="uid://m35phn67grif" path="res://assets/sprites/area_check.png" id="2_rxk41"]
 [ext_resource type="PackedScene" uid="uid://cl5u6lvv782y0" path="res://scenes/effects/explosion.tscn" id="3_sfytd"]
+[ext_resource type="AudioStream" uid="uid://cdcgknwlomhsx" path="res://assets/sounds/score_sfx.wav" id="5_qqkjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gl5ax"]
 size = Vector2(80, 80)
@@ -29,5 +30,8 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_m6upy")
 
 [node name="Explosion" parent="." instance=ExtResource("3_sfytd")]
+
+[node name="scoresfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qqkjn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

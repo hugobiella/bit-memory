@@ -14,19 +14,24 @@ func _ready():
 		print("Erro: GridContainer não encontrado!")
 		return
 
-	grid_container.columns = 2
+	grid_container.columns = 3  # Alteração para 3 colunas
+
+	# Adicionando os cabeçalhos com uma coluna vazia no meio
 	grid_container.add_child(create_label("Número de Página"))
+	grid_container.add_child(create_label(" "))  # Coluna do meio vazia
 	grid_container.add_child(create_label("Número de Quadro"))
-	grid_container.add_child(create_label(" "))
-	grid_container.add_child(create_label(" "))
 
 	for virtual_address in Globals.virtual_address_array:
 		var formatted_virtual_address = "%05X" % (virtual_address >> 12)
 		for physical_address in Globals.physical_address_array:
 			if extract_offset(virtual_address) == extract_offset(physical_address):
 				var formatted_physical_address = "%05X" % (physical_address >> 12)
+
+				# Preenchendo as colunas com dados e uma vazia no meio
 				grid_container.add_child(create_disabled_button(formatted_virtual_address))  # Botão desabilitado
+				grid_container.add_child(create_label(" > "))  # Coluna do meio vazia
 				grid_container.add_child(create_button(formatted_physical_address, le_pa))  # Botão interativo
+
 				print("Endereço Virtual e Físico correspondem: ", formatted_virtual_address, " --> ", formatted_physical_address)
 				break
 
@@ -47,7 +52,7 @@ func create_disabled_button(text) -> Button:
 	var button = Button.new()
 	button.text = text
 	button.add_theme_font_size_override("font_size", 21)
-	button.disabled = true  # Tornar o botão não pressionável
+	button.disabled = true  
 	return button
 
 func _on_button_pressed(value: String, target_line_edit: LineEdit):
