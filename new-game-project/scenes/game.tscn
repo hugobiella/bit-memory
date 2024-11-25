@@ -13,7 +13,7 @@ script = ExtResource("1_fpu7j")
 [node name="player" parent="." instance=ExtResource("1_1hgf2")]
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(0.2, 0.2)
+zoom = Vector2(0.15, 0.15)
 
 [node name="ProgressBar" type="ProgressBar" parent="player/Camera2D"]
 offset_left = -384.0

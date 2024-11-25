@@ -26,12 +26,14 @@ func initialize_random_order():
 func update_virtual_address():
 	if current_index < shuffled_indices.size():
 		var index = shuffled_indices[current_index]
-		var virtual_address_without_offset = String("%X" % virtual_addresses[index]).substr(0, String("%X" % virtual_addresses[index]).length() - 3)
-		label_va.text = virtual_address_without_offset
-
+		# Obter o endereço virtual completo em hexadecimal
 		var virtual_address = String("%X" % virtual_addresses[index]).to_upper()
-		var expected_offset = virtual_address.substr(virtual_address.length() - 3, 3)
+		# Separar o offset (últimos 3 dígitos em hexadecimal)
+		var expected_offset = String("%X" % virtual_addresses[index]).to_upper().substr(virtual_address.length() - 3, 3)
+		# Exibir o endereço virtual completo com o offset no formato hexadecimal
+		label_va.text = virtual_address
 
+		# Encontrar o endereço físico correspondente
 		var expected_pa = ""
 		for i in range(physical_addresses.size()):
 			var physical_address = String("%X" % physical_addresses[i]).to_upper()

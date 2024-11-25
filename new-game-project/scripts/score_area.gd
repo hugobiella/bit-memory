@@ -32,8 +32,8 @@ func _on_body_entered(body):
 			Globals.being_carried = false
 			body.queue_free()
 			update_sprite_visibility()
-			label.position.x = -70
-			label.text = "0x%08X" % [physical_address]
+			label.position.x = -50
+			label.text = "0x%05X" % [physical_address >> 12]
 
 func update_sprite_visibility():
 	uncheck_sprite.visible = true
