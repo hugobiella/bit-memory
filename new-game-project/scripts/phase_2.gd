@@ -14,11 +14,10 @@ func _ready():
 		print("Erro: GridContainer não encontrado!")
 		return
 
-	grid_container.columns = 3  # Alteração para 3 colunas
-
-	# Adicionando os cabeçalhos com uma coluna vazia no meio
+	grid_container.columns = 3
+	
 	grid_container.add_child(create_label("Número de Página"))
-	grid_container.add_child(create_label(" "))  # Coluna do meio vazia
+	grid_container.add_child(create_label(" "))
 	grid_container.add_child(create_label("Número de Quadro"))
 
 	for virtual_address in Globals.virtual_address_array:
@@ -27,10 +26,9 @@ func _ready():
 			if extract_offset(virtual_address) == extract_offset(physical_address):
 				var formatted_physical_address = "%05X" % (physical_address >> 12)
 
-				# Preenchendo as colunas com dados e uma vazia no meio
-				grid_container.add_child(create_disabled_button(formatted_virtual_address))  # Botão desabilitado
-				grid_container.add_child(create_label(" > "))  # Coluna do meio vazia
-				grid_container.add_child(create_button(formatted_physical_address, le_pa))  # Botão interativo
+				grid_container.add_child(create_disabled_button(formatted_virtual_address))
+				grid_container.add_child(create_label(" > "))
+				grid_container.add_child(create_button(formatted_physical_address, le_pa))
 
 				print("Endereço Virtual e Físico correspondem: ", formatted_virtual_address, " --> ", formatted_physical_address)
 				break

@@ -28,13 +28,13 @@ func initialize_random_order():
 func update_virtual_address():
 	if current_index < shuffled_indices.size():
 		var index = shuffled_indices[current_index]
-		var virtual_address = String("%X" % virtual_addresses[index]).to_upper()
-		var expected_offset = String("%X" % virtual_addresses[index]).to_upper().substr(virtual_address.length() - 3, 3)
+		var virtual_address = String("%08X" % virtual_addresses[index]).to_upper()
+		var expected_offset = String("%03X" % virtual_addresses[index]).to_upper().substr(virtual_address.length() - 3, 3)
 		label_va.text = virtual_address
 
 		var expected_pa = ""
 		for i in range(physical_addresses.size()):
-			var physical_address = String("%X" % physical_addresses[i]).to_upper()
+			var physical_address = String("%08X" % physical_addresses[i]).to_upper()
 			var physical_offset = physical_address.substr(physical_address.length() - 3, 3)
 
 			if physical_offset == expected_offset:
