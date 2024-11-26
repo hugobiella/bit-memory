@@ -12,13 +12,12 @@ grow_vertical = 0
 script = ExtResource("1_q1apc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.2, 0.2)
 
 [node name="Label" type="Label" parent="Camera2D"]
-offset_left = -213.0
-offset_top = -441.0
-offset_right = 219.0
-offset_bottom = -409.0
+offset_left = -216.0
+offset_top = -504.0
+offset_right = 216.0
+offset_bottom = -472.0
 theme_override_font_sizes/font_size = 32
 text = "Fase 2 : Tradução"
 
