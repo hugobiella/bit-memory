@@ -10,7 +10,7 @@ const ACCELERATION = 10000
 func _physics_process(delta):
 	move(delta)
 	if carrying_object && Globals.package_exploded == false:
-		carrying_object.position = global_position + pickup_offset
+		update_carried_object_position()
 
 func move(delta):
 	if Globals.lock_player == false:
@@ -23,20 +23,24 @@ func move(delta):
 			apply_movement(input_vector * ACCELERATION * delta)
 			move_and_slide()
 			particles.start_particles()
-			if abs(input_vector.x) > abs(input_vector.y):
-				if input_vector.x > 0:
-					sprite.play("run_right")
-					pickup_offset = Vector2(90, 0)
-				else:
-					sprite.play("run_left")
-					pickup_offset = Vector2(-90, 0)
-			else:
-				if input_vector.y > 0:
-					sprite.play("run_down")
-					pickup_offset = Vector2(0, 90)
-				else:
-					sprite.play("run_up")
-					pickup_offset = Vector2(0, -110)
+			update_sprite_animation(input_vector)
+
+func update_sprite_animation(input_vector: Vector2):
+	if abs(input_vector.x) > abs(input_vector.y):
+		if input_vector.x > 0:
+			sprite.play("run_right")
+		else:
+			sprite.play("run_left")
+	else:
+		if input_vector.y > 0:
+			sprite.play("run_down")
+		else:
+			sprite.play("run_up")
+
+func update_carried_object_position():
+	var mouse_position = get_global_mouse_position()
+	carrying_object.position = global_position + (mouse_position - global_position).normalized() * 90
+	carrying_object.look_at(mouse_position)
 
 func apply_movement(amount) -> void:
 	velocity += amount

@@ -82,3 +82,7 @@ func _on_button_pressed():
 	else:
 		label_check.text = "Tradução incorreta!\nTente novamente."
 		losesfx.play()
+
+func _process(delta):
+	if Input.is_action_just_pressed("enter"):
+		_on_button_pressed()
