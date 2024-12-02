@@ -6,9 +6,11 @@ const ACCELERATION = 10000
 
 @onready var sprite = $AnimatedSprite2D
 @onready var particles = $Walking
+@onready var camera = $Camera2D  # Referência ao Camera2D
 
 func _physics_process(delta):
 	move(delta)
+	update_camera_position(delta)  # Atualiza a posição da câmera
 	if carrying_object && Globals.package_exploded == false:
 		update_carried_object_position()
 
@@ -57,3 +59,10 @@ func drop_object():
 		carrying_object.get_parent().remove_child(carrying_object)
 		get_parent().add_child(carrying_object)
 		carrying_object = null
+
+func update_camera_position(delta):
+	if Globals.lock_player:
+		return
+	var mouse_position = get_global_mouse_position()
+	var target_position = global_position.lerp(mouse_position, 0.3)
+	camera.position = camera.position.lerp(target_position - global_position, 0.1)
