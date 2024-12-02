@@ -306,24 +306,6 @@ shape = SubResource("RectangleShape2D_ry2mp")
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-8, 0)
 
-[node name="ProgressBar" type="ProgressBar" parent="player/Camera2D"]
-offset_left = -576.0
-offset_top = 448.0
-offset_right = 576.0
-offset_bottom = 504.0
-theme_override_fonts/font = ExtResource("6_3ty46")
-theme_override_font_sizes/font_size = 32
-step = 1.0
-script = ExtResource("7_uax86")
-
-[node name="Label" type="Label" parent="player/Camera2D"]
-offset_left = -212.0
-offset_top = -504.0
-offset_right = 212.0
-offset_bottom = -472.0
-theme_override_font_sizes/font_size = 32
-text = "Fase 1 : Alocação"
-
 [node name="PackageGenerator3" parent="." instance=ExtResource("3_xmbt7")]
 light_mask = 0
 visibility_layer = 2
@@ -355,3 +337,39 @@ offset_bottom = -160.0
 theme_override_font_sizes/font_size = 32
 text = "Quadros"
 horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -50.0
+offset_right = 500.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(1500, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_3ty46")
+theme_override_font_sizes/font_size = 32
+step = 1.0
+script = ExtResource("7_uax86")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.0
+offset_right = 212.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label3" type="Label" parent="CanvasLayer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Fase 1 : Alocação"

@@ -151,14 +151,6 @@ tile_set = SubResource("TileSet_0suqv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Label" type="Label" parent="Camera2D"]
-offset_left = -216.0
-offset_top = -504.0
-offset_right = 216.0
-offset_bottom = -472.0
-theme_override_font_sizes/font_size = 32
-text = "Fase 2 : Tradução"
-
 [node name="LeftPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = -768.0
@@ -289,5 +281,21 @@ offset_right = 288.0
 offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -216.0
+offset_right = 216.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Fase 2 : Tradução"
 
 [connection signal="pressed" from="LeftPanel/Button" to="LeftPanel" method="_on_button_pressed"]
