@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds5hhl1cbspfs"
-path="res://.godot/imported/tilemap_packed.png-5fea26cc7065af26a7ac017b798ddf1a.ctex"
+uid="uid://ptgw1xbq21qs"
+path="res://.godot/imported/tilemap_packed.png-6fd85707c3b7670b866333c3d4f3b448.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kenney_ui-pack-pixel-adventure/Tilesheets/Small tiles/Thin outline/tilemap_packed.png"
-dest_files=["res://.godot/imported/tilemap_packed.png-5fea26cc7065af26a7ac017b798ddf1a.ctex"]
+source_file="res://assets/tilemap/tilemap_packed.png"
+dest_files=["res://.godot/imported/tilemap_packed.png-6fd85707c3b7670b866333c3d4f3b448.ctex"]
 
 [params]
 
