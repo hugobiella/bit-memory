@@ -36,20 +36,20 @@ func _ready():
 func create_label(text) -> Label:
 	var label = Label.new()
 	label.text = text
-	label.add_theme_font_size_override("font_size", 21)
+	label.add_theme_font_size_override("font_size", 16)
 	return label
 
 func create_button(text, target_line_edit: LineEdit) -> Button:
 	var button = Button.new()
 	button.text = text
-	button.add_theme_font_size_override("font_size", 21)
+	button.add_theme_font_size_override("font_size", 16)
 	button.pressed.connect(Callable(self, "_on_button_pressed").bind(text, target_line_edit))
 	return button
 
 func create_disabled_button(text) -> Button:
 	var button = Button.new()
 	button.text = text
-	button.add_theme_font_size_override("font_size", 21)
+	button.add_theme_font_size_override("font_size", 16)
 	button.disabled = true  
 	return button
 
