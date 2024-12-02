@@ -13,3 +13,6 @@ var virtual_address_array = []
 
 func add_points(points):
 	score += points
+
+func _ready():
+	get_viewport().size = DisplayServer.screen_get_size()

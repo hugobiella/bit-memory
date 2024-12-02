@@ -22,3 +22,7 @@ func _is_valid_integer(value: String) -> bool:
 		if character < '0' or character > '9':
 			return false
 	return true
+
+func _process(_delta):
+	if Input.is_action_just_pressed("enter"):
+		_on_button_pressed()
