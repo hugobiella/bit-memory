@@ -25,7 +25,6 @@ func _process(_delta):
 		label.global_position.x -= label.size.x / 2
 		if Globals.being_carried == false:
 			label.show()
-			print(label.text)
 	else:
 		label.hide()
 
