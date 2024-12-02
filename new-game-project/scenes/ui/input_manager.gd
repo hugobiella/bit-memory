@@ -18,7 +18,7 @@ func _on_button_pressed():
 		get_tree().current_scene._on_input_received(Globals.amount_to_generate)
 
 func _is_valid_integer(value: String) -> bool:
-	for char in value:
-		if char < '0' or char > '9':
+	for character in value:
+		if character < '0' or character > '9':
 			return false
 	return true

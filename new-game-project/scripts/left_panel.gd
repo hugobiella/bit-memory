@@ -32,13 +32,13 @@ func update_virtual_address():
 		var expected_offset = String("%03X" % virtual_addresses[index]).to_upper().substr(virtual_address.length() - 3, 3)
 		label_va.text = virtual_address
 
-		var expected_pa = ""
+		var _expected_pa = ""
 		for i in range(physical_addresses.size()):
 			var physical_address = String("%08X" % physical_addresses[i]).to_upper()
 			var physical_offset = physical_address.substr(physical_address.length() - 3, 3)
 
 			if physical_offset == expected_offset:
-				expected_pa = physical_address.substr(0, 5)
+				_expected_pa = physical_address.substr(0, 5)
 				break
 
 		le_pa.placeholder_text = "Endereço Físico"
@@ -83,6 +83,6 @@ func _on_button_pressed():
 		label_check.text = "Tradução incorreta!\nTente novamente."
 		losesfx.play()
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("enter"):
 		_on_button_pressed()

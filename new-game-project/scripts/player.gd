@@ -60,7 +60,7 @@ func drop_object():
 		get_parent().add_child(carrying_object)
 		carrying_object = null
 
-func update_camera_position(delta):
+func update_camera_position(_delta):
 	if Globals.lock_player:
 		return
 	var mouse_position = get_global_mouse_position()
