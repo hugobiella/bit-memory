@@ -181,10 +181,10 @@ horizontal_alignment = 1
 
 [node name="Label_check" type="Label" parent="LeftPanel"]
 layout_mode = 0
-offset_top = 736.0
-offset_right = 704.0
-offset_bottom = 816.0
-theme_override_font_sizes/font_size = 36
+offset_top = 560.0
+offset_right = 552.0
+offset_bottom = 640.0
+theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -194,23 +194,23 @@ scale = Vector2(3, 3)
 texture = ExtResource("3_1s4q6")
 
 [node name="mmu" type="Sprite2D" parent="LeftPanel"]
-position = Vector2(296, 328)
+position = Vector2(291, 307)
 scale = Vector2(2.75, 2.75)
 texture = ExtResource("4_b0pcw")
 
 [node name="ram" type="Sprite2D" parent="LeftPanel"]
-position = Vector2(276, 544)
+position = Vector2(276, 480)
 scale = Vector2(4, 4)
 texture = ExtResource("4_gvvi4")
 
 [node name="arrow1" type="Sprite2D" parent="LeftPanel"]
-position = Vector2(504, 368)
+position = Vector2(504, 340)
 rotation = 1.57079
 scale = Vector2(2.087, 2.087)
 texture = ExtResource("6_ogbmd")
 
 [node name="arrow2" type="Sprite2D" parent="LeftPanel"]
-position = Vector2(64, 328)
+position = Vector2(64, 304)
 rotation = -0.000124529
 scale = Vector2(2.08696, 2.08696)
 texture = ExtResource("7_ai0ri")
@@ -218,9 +218,9 @@ texture = ExtResource("7_ai0ri")
 [node name="LE_pa" type="LineEdit" parent="LeftPanel"]
 layout_mode = 0
 offset_left = 40.0
-offset_top = 496.0
+offset_top = 432.0
 offset_right = 512.0
-offset_bottom = 525.0
+offset_bottom = 461.0
 theme_override_font_sizes/font_size = 16
 placeholder_text = "endereço físico"
 alignment = 1
@@ -228,9 +228,9 @@ alignment = 1
 [node name="LE_offset" type="LineEdit" parent="LeftPanel"]
 layout_mode = 0
 offset_left = 40.0
-offset_top = 552.0
+offset_top = 488.0
 offset_right = 512.0
-offset_bottom = 581.0
+offset_bottom = 517.0
 theme_override_font_sizes/font_size = 16
 placeholder_text = "deslocamento"
 alignment = 1
@@ -238,9 +238,9 @@ alignment = 1
 [node name="Button" type="Button" parent="LeftPanel"]
 layout_mode = 0
 offset_left = 392.0
-offset_top = 336.0
+offset_top = 312.0
 offset_right = 449.0
-offset_bottom = 368.0
+offset_bottom = 344.0
 theme_override_font_sizes/font_size = 16
 action_mode = 0
 text = "Ok"
