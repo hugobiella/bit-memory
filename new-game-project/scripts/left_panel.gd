@@ -12,12 +12,17 @@ var current_index = 0
 @onready var button = $Button
 @onready var winsfx = $winsfx
 @onready var losesfx = $losesfx
+@onready var bclose = $bclose
+@onready var brestart = $brestart
+@onready var label_el = $Label_EL
 
 func _ready():
 	initialize_random_order()
 	update_virtual_address()
 	label_check.text = ""
 	button.disabled = false
+	bclose.visible = false
+	brestart.visible = false
 
 func initialize_random_order():
 	shuffled_indices = []
@@ -47,6 +52,10 @@ func update_virtual_address():
 		label_check.text = "Jogo concluído!"
 		label_va.text = ""
 		button.disabled = true
+		bclose.visible = true
+		label_el.visible = false
+		#brestart.visible = true # - need to fix error on interaction_manager:
+		#Invalid access to property or key 'global_position' on a base object of type 'previously freed'.
 
 func _on_button_pressed():
 	if current_index >= shuffled_indices.size():
@@ -82,6 +91,14 @@ func _on_button_pressed():
 	else:
 		label_check.text = "Tradução incorreta!\nTente novamente."
 		losesfx.play()
+
+func _on_bclose_pressed():
+	get_tree().quit()
+
+func _on_brestart_pressed():
+	var phase1 = "res://scenes/phase1.tscn"
+	Globals.reset()
+	get_tree().change_scene_to_file(phase1)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("enter"):

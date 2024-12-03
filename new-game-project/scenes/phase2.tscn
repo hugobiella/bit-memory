@@ -252,6 +252,22 @@ stream = ExtResource("5_00qcq")
 [node name="losesfx" type="AudioStreamPlayer2D" parent="LeftPanel"]
 stream = ExtResource("6_7444d")
 
+[node name="bclose" type="Button" parent="LeftPanel"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 64.0
+offset_right = 472.0
+offset_bottom = 104.0
+text = "fechar jogo"
+
+[node name="brestart" type="Button" parent="LeftPanel"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 128.0
+offset_right = 472.0
+offset_bottom = 168.0
+text = "reiniciar"
+
 [node name="RightPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 24.0
@@ -301,3 +317,5 @@ theme_override_font_sizes/font_size = 32
 text = "Fase 2 : Tradução"
 
 [connection signal="pressed" from="LeftPanel/Button" to="LeftPanel" method="_on_button_pressed"]
+[connection signal="pressed" from="LeftPanel/bclose" to="LeftPanel" method="_on_bclose_pressed"]
+[connection signal="pressed" from="LeftPanel/brestart" to="LeftPanel" method="_on_brestart_pressed"]
